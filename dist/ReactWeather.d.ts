@@ -3,6 +3,7 @@ import "./ReactWeather.sass";
 interface ReactWeatherProps {
     lat: string;
     lon: string;
+    city?: string;
     apiKey: string;
     lang?: "en" | "es" | "pt" | "ru";
     unit?: "metric" | "imperial";

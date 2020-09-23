@@ -10,6 +10,7 @@ const endPointToday = "https://api.openweathermap.org/data/2.5/onecall";
 interface ReactWeatherProps {
   lat: string;
   lon: string;
+  city?: string;
   apiKey: string;
   lang?: "en" | "es" | "pt" | "ru";
   unit?: "metric" | "imperial";
@@ -19,6 +20,7 @@ interface ReactWeatherProps {
 const ReactWeather: React.FC<ReactWeatherProps> = ({
   lat,
   lon,
+  city,
   apiKey,
   lang = "en",
   unit = "metric",
@@ -86,7 +88,11 @@ const ReactWeather: React.FC<ReactWeatherProps> = ({
             <span>{data.description}</span>
           </div>
 
-          <div className="current-dt">{data.date}</div>
+          <div className="current-dt">
+            {data.city}
+            <br />
+            {data.date}
+          </div>
         </div>
 
         <div className="rw-box__bottom">
