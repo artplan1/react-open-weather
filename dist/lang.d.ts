@@ -1,19 +1,46 @@
 declare namespace _default {
     namespace en {
-        const Wind: string;
-        const Humidity: string;
-        const Uvi: string;
-        const Precipitation: string;
+        const wind: string;
+        const humidity: string;
+        const uvi: string;
+        const precipitation: string;
+        const todayWeather: string;
     }
     namespace es {
-        const Wind_1: string;
-        export { Wind_1 as Wind };
-        const Humidity_1: string;
-        export { Humidity_1 as Humidity };
-        const Uvi_1: string;
-        export { Uvi_1 as Uvi };
-        const Precipitation_1: string;
-        export { Precipitation_1 as Precipitation };
+        const wind_1: string;
+        export { wind_1 as wind };
+        const humidity_1: string;
+        export { humidity_1 as humidity };
+        const uvi_1: string;
+        export { uvi_1 as uvi };
+        const precipitation_1: string;
+        export { precipitation_1 as precipitation };
+        const todayWeather_1: string;
+        export { todayWeather_1 as todayWeather };
+    }
+    namespace pt {
+        const wind_2: string;
+        export { wind_2 as wind };
+        const humidity_2: string;
+        export { humidity_2 as humidity };
+        const uvi_2: string;
+        export { uvi_2 as uvi };
+        const precipitation_2: string;
+        export { precipitation_2 as precipitation };
+        const todayWeather_2: string;
+        export { todayWeather_2 as todayWeather };
+    }
+    namespace ru {
+        const wind_3: string;
+        export { wind_3 as wind };
+        const humidity_3: string;
+        export { humidity_3 as humidity };
+        const uvi_3: string;
+        export { uvi_3 as uvi };
+        const precipitation_3: string;
+        export { precipitation_3 as precipitation };
+        const todayWeather_3: string;
+        export { todayWeather_3 as todayWeather };
     }
 }
 export default _default;

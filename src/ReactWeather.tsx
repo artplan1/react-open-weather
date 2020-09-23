@@ -11,7 +11,7 @@ interface ReactWeatherProps {
   lat: string;
   lon: string;
   apiKey: string;
-  lang?: "en" | "es";
+  lang?: "en" | "es" | "pt" | "ru";
   unit?: "metric" | "imperial";
   loadingComponent?: JSX.Element;
 }
@@ -72,7 +72,7 @@ const ReactWeather: React.FC<ReactWeatherProps> = ({
 
   return (
     <div className="rw-main">
-      <p>Today's Weather</p>
+      <p>{langs.todayWeather}</p>
 
       <div className="rw-box">
         <div className="rw-box__top">
@@ -91,25 +91,25 @@ const ReactWeather: React.FC<ReactWeatherProps> = ({
 
         <div className="rw-box__bottom">
           <div>
-            {langs.Wind}
+            {langs.wind}
             <br />
             {data.wind} {units.speed}
           </div>
 
           <div>
-            {langs.Uvi}
+            {langs.uvi}
             <br />
             {data.uvi}
           </div>
 
           <div>
-            {langs.Humidity}
+            {langs.humidity}
             <br />
             {data.humidity}%
           </div>
 
           <div>
-            {langs.Precipitation}
+            {langs.precipitation}
             <br />
             {data.precipitation}%
           </div>

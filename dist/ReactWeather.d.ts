@@ -4,7 +4,7 @@ interface ReactWeatherProps {
     lat: string;
     lon: string;
     apiKey: string;
-    lang?: "en" | "es";
+    lang?: "en" | "es" | "pt" | "ru";
     unit?: "metric" | "imperial";
     loadingComponent?: JSX.Element;
 }
