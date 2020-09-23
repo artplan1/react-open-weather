@@ -74,18 +74,20 @@ const ReactWeather: React.FC<ReactWeatherProps> = ({
 
   return (
     <div className="rw-main">
-      <p>{langs.todayWeather}</p>
-
       <div className="rw-box">
         <div className="rw-box__top">
-          <div className="current-temp">
-            <i className={`wicon wi ${todayIcon}`}></i>
+          <div>
+            <p>{langs.todayWeather}</p>
 
-            <span className="current-temp__temp">
-              {data.temperature.current} {units.temp}
-            </span>
+            <div className="current-temp__temp">
+              <i className={`wicon wi ${todayIcon}`}></i>
 
-            <span>{data.description}</span>
+              <span>
+                {data.temperature.current} {units.temp}
+              </span>
+
+              <span>{data.description}</span>
+            </div>
           </div>
 
           <div className="current-dt">
