@@ -45,9 +45,9 @@ const ReactWeather: React.FC<ReactWeatherProps> = ({
         return response.json();
       })
       .then((resp) => {
-        if (resp) {
-          const todayData = resp.current;
+        const todayData = resp.current;
 
+        if (todayData) {
           setData({
             description: todayData.weather[0].description,
             icon: todayData.weather[0].icon,
