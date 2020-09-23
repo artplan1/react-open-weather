@@ -1,0 +1,55 @@
+$wi-path: 'https://erikflowers.github.io/weather-icons/font'
+
+@import '~weathericons/sass/weather-icons-core.scss'
+@import '~weathericons/sass/weather-icons-variables.scss'
+@import '~weathericons/sass/weather-icons-classes.scss'
+@import '~weathericons/sass/mappings/wi-owm.scss'
+
+$rw-box-font: Helvetica, sans-serif !default
+$rw-box-bg: linear-gradient(to top left, #008dbe, #43b0d3, #8ddbf2) !default
+$rw-text-color: #fff !default
+
+.rw-main
+  font-family: $rw-box-font
+  color: $rw-text-color
+  background: $rw-box-bg
+  padding: 1rem
+  border: 1px solid #f0f0f0
+
+  p
+    margin: 0
+
+  .rw-box
+    & > *
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+    &__top
+      & > *
+        flex: 1
+        text-align: right
+
+      .current-temp
+        display: flex
+        align-items: center
+        text-transform: capitalize
+
+        &__temp
+          margin: 0 1rem
+
+        &__temp, i
+          font-size: 2rem
+
+      .current-dt
+        font-size: 0.875rem
+
+    &__bottom
+      text-transform: uppercase
+      text-align: center
+      font-size: 0.875rem
+      & > *
+        flex: 1
+
+        &:not(:last-child)
+          border-right: 1px solid #fff

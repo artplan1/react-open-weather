@@ -3,7 +3,6 @@ node_modules
 npm-debug.log
 
 # #dist
-lib
 
 #coverage
 coverage
@@ -14,3 +13,7 @@ coverage
 
 #docs
 docs/_site
+
+*.log
+
+.cache
