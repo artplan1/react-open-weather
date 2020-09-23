@@ -25,6 +25,10 @@ $rw-text-color: #fff !default
       align-items: center
       justify-content: space-between
 
+      @media (max-width: 499px)
+        flex-direction: column
+        align-items: flex-start
+
     &__top
       & > *
         flex: 1
@@ -47,16 +51,18 @@ $rw-text-color: #fff !default
 
     &__bottom
       text-transform: uppercase
-      text-align: center
       font-size: 0.875rem
 
       @media (max-width: 499px)
-        flex-direction: column
+        & > *
+          margin-bottom: 0.5rem
 
       & > *
         flex: 1
-        padding: 0 0.5rem
 
         @media (min-width: 500px)
+          text-align: center
+          padding: 0 0.5rem
+
           &:not(:last-child)
             border-right: 1px solid #fff

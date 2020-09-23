@@ -62,7 +62,7 @@ const ReactWeather: React.FC<ReactWeatherProps> = ({
           });
         }
       });
-  }, []);
+  }, [lang]);
 
   if (!data) return loadingComponent || <div>Loading...</div>;
 
