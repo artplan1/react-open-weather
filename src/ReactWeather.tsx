@@ -79,10 +79,10 @@ const ReactWeather: React.FC<ReactWeatherProps> = ({
           <div>
             <p>{langs.todayWeather}</p>
 
-            <div className="current-temp__temp">
+            <div className="current-temp">
               <i className={`wicon wi ${todayIcon}`}></i>
 
-              <span>
+              <span className="current-temp__temp">
                 {data.temperature.current} {units.temp}
               </span>
 
