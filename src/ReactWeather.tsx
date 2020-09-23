@@ -89,7 +89,7 @@ const ReactWeather: React.FC<ReactWeatherProps> = ({
           </div>
 
           <div className="current-dt">
-            {data.city}
+            {city}
             <br />
             {data.date}
           </div>
