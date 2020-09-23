@@ -28,7 +28,6 @@ $rw-text-color: #fff !default
     &__top
       & > *
         flex: 1
-        text-align: right
 
       .current-temp
         display: flex
@@ -37,19 +36,27 @@ $rw-text-color: #fff !default
 
         &__temp
           margin: 0 1rem
+          white-space: nowrap
 
         &__temp, i
           font-size: 2rem
 
       .current-dt
         font-size: 0.875rem
+        text-align: right
 
     &__bottom
       text-transform: uppercase
       text-align: center
       font-size: 0.875rem
+
+      @media (max-width: 499px)
+        flex-direction: column
+
       & > *
         flex: 1
+        padding: 0 0.5rem
 
-        &:not(:last-child)
-          border-right: 1px solid #fff
+        @media (min-width: 500px)
+          &:not(:last-child)
+            border-right: 1px solid #fff
