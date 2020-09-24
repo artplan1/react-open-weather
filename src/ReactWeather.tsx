@@ -48,6 +48,7 @@ const ReactWeather: React.FC<ReactWeatherProps> = ({
       })
       .then((resp) => {
         const todayData = resp.current;
+        const minuteData = resp.minutely;
 
         if (todayData) {
           setData({
@@ -60,7 +61,7 @@ const ReactWeather: React.FC<ReactWeatherProps> = ({
             humidity: todayData.humidity,
             date: formatDateTime(todayData.dt, lang),
             uvi: todayData.uvi,
-            precipitation: resp.minutely[0].precipitation * 100,
+            precipitation: minuteData ? minuteData[0].precipitation * 100 : "-",
           });
         }
       });

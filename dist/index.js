@@ -154,6 +154,7 @@ var ReactWeather = function (_a) {
         })
             .then(function (resp) {
             var todayData = resp.current;
+            var minuteData = resp.minutely;
             if (todayData) {
                 setData({
                     description: todayData.weather[0].description,
@@ -165,7 +166,7 @@ var ReactWeather = function (_a) {
                     humidity: todayData.humidity,
                     date: formatDateTime(todayData.dt, lang),
                     uvi: todayData.uvi,
-                    precipitation: resp.minutely[0].precipitation * 100,
+                    precipitation: minuteData ? minuteData[0].precipitation * 100 : "-",
                 });
             }
         });
