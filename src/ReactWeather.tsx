@@ -5,7 +5,7 @@ import fetch from "isomorphic-unfetch";
 
 import "./ReactWeather.sass";
 
-const endPointToday =
+const endpointToday =
   "https://api.openweathermap.org/data/2.5/onecall?exclude=minutely,daily";
 
 interface ReactWeatherProps {
@@ -38,35 +38,30 @@ const ReactWeather: React.FC<ReactWeatherProps> = ({
       lon,
     } as { [key: string]: string };
 
-    const url = new URL(endPointToday);
-    Object.keys(params).forEach((key) =>
-      url.searchParams.append(key, params[key])
-    );
+    const url = new URL(endpointToday);
+
+    Object.keys(params).forEach((key) => {
+      url.searchParams.append(key, params[key]);
+    });
 
     fetch(String(url))
-      .then((response) => {
-        return response.json();
-      })
-      .then((resp) => {
-        const todayData = resp.current;
-        const hourData = resp.hourly;
+      .then((response) => response.json())
+      .then(({ current, hourly }) => {
+        if (!current) return;
 
-        if (todayData) {
-          setData({
-            description: todayData.weather[0].description,
-            icon: todayData.weather[0].icon,
-            temperature: {
-              current: todayData.temp.toFixed(0),
-            },
-            wind: todayData.wind_speed.toFixed(0),
-            humidity: todayData.humidity,
-            date: formatDateTime(todayData.dt, lang),
-            uvi: todayData.uvi,
-            precipitation: hourData ? hourData[0].pop * 100 : "-",
-          });
-        }
+        setData({
+          description: current.weather[0].description,
+          icon: current.weather[0].icon,
+          temperature: {
+            current: current.temp.toFixed(0),
+          },
+          wind: current.wind_speed.toFixed(0),
+          humidity: current.humidity,
+          date: formatDateTime(current.dt, lang),
+          precipitation: hourly ? Math.round(hourly[1].pop * 100) : "-",
+        });
       });
-  }, [lang]);
+  }, [lang, lat, lon]);
 
   if (!data) return loadingComponent || <div>Loading...</div>;
 
@@ -104,12 +99,6 @@ const ReactWeather: React.FC<ReactWeatherProps> = ({
             {langs.wind}
             <br />
             {data.wind} {units.speed}
-          </div>
-
-          <div>
-            {langs.uvi}
-            <br />
-            {data.uvi}
           </div>
 
           <div>
