@@ -1,6 +1,6 @@
 {
   "name": "react-open-weather",
-  "version": "0.6.9",
+  "version": "0.7.0",
   "description": "React Weather component",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
