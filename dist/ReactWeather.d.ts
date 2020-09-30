@@ -1,8 +1,8 @@
 import React from "react";
 import "./ReactWeather.sass";
 interface ReactWeatherProps {
-    lat: string;
-    lon: string;
+    lat: string | number;
+    lon: string | number;
     city?: string;
     apiKey: string;
     lang?: "en" | "es" | "pt" | "ru";

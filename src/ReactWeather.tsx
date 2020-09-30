@@ -9,8 +9,8 @@ const endpointToday =
   "https://api.openweathermap.org/data/2.5/onecall?exclude=minutely,daily";
 
 interface ReactWeatherProps {
-  lat: string;
-  lon: string;
+  lat: string | number;
+  lon: string | number;
   city?: string;
   apiKey: string;
   lang?: "en" | "es" | "pt" | "ru";
