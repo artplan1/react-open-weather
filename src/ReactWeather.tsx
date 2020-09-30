@@ -5,7 +5,8 @@ import fetch from "isomorphic-unfetch";
 
 import "./ReactWeather.sass";
 
-const endPointToday = "https://api.openweathermap.org/data/2.5/onecall";
+const endPointToday =
+  "https://api.openweathermap.org/data/2.5/onecall?exclude=minutely,daily";
 
 interface ReactWeatherProps {
   lat: string;
@@ -48,7 +49,7 @@ const ReactWeather: React.FC<ReactWeatherProps> = ({
       })
       .then((resp) => {
         const todayData = resp.current;
-        const minuteData = resp.minutely;
+        const hourData = resp.hourly;
 
         if (todayData) {
           setData({
@@ -61,7 +62,7 @@ const ReactWeather: React.FC<ReactWeatherProps> = ({
             humidity: todayData.humidity,
             date: formatDateTime(todayData.dt, lang),
             uvi: todayData.uvi,
-            precipitation: minuteData ? minuteData[0].precipitation * 100 : "-",
+            precipitation: hourData ? hourData[0].pop * 100 : "-",
           });
         }
       });
