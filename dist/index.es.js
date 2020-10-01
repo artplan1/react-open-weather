@@ -27,24 +27,28 @@ var langText = {
   en: {
     wind: "Wind",
     humidity: "Humidity",
+    uvi: "UV Index",
     precipitation: "Chance of rain",
     todayWeather: "Today's Weather",
   },
   es: {
     wind: "Viento",
     humidity: "Humedad",
+    uvi: "Índice UV",
     precipitation: "Probabilidad de lluvia",
     todayWeather: "El tiempo de hoy",
   },
   pt: {
     wind: "Vento",
     humidity: "Umidade",
+    uvi: "Índice UV",
     precipitation: "Chance de chover",
     todayWeather: "Clima de hoje",
   },
   ru: {
     wind: "Ветер",
     humidity: "Влажность",
+    uvi: "УФ-индекс",
     precipitation: "Вероятность осадков",
     todayWeather: "Погода сегодня",
   },
@@ -149,6 +153,7 @@ var ReactWeather = function (_a) {
                 wind: current.wind_speed.toFixed(0),
                 humidity: current.humidity,
                 date: formatDateTime(current.dt, lang),
+                uvi: current.uvi,
                 precipitation: hourly ? Math.round(hourly[1].pop * 100) : "-",
             });
         });
@@ -181,6 +186,10 @@ var ReactWeather = function (_a) {
                     data.wind,
                     " ",
                     units.speed),
+                React.createElement("div", null,
+                    langs.uvi,
+                    React.createElement("br", null),
+                    data.uvi),
                 React.createElement("div", null,
                     langs.humidity,
                     React.createElement("br", null),

@@ -58,6 +58,7 @@ const ReactWeather: React.FC<ReactWeatherProps> = ({
           wind: current.wind_speed.toFixed(0),
           humidity: current.humidity,
           date: formatDateTime(current.dt, lang),
+          uvi: current.uvi,
           precipitation: hourly ? Math.round(hourly[1].pop * 100) : "-",
         });
       });
@@ -99,6 +100,12 @@ const ReactWeather: React.FC<ReactWeatherProps> = ({
             {langs.wind}
             <br />
             {data.wind} {units.speed}
+          </div>
+
+          <div>
+            {langs.uvi}
+            <br />
+            {data.uvi}
           </div>
 
           <div>
