@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import moment from 'moment';
-import fetch from 'isomorphic-unfetch';
+import dayjs from 'dayjs';
+import fetch from 'isomorphic-fetch';
 
 var icons = {
   "01d": "wi-day-sunny",
@@ -81,9 +81,9 @@ function getUnits(unit) {
 }
 
 function formatDateTime(dte, lang) {
-  if (dte && moment(dte).isValid()) {
-    moment.locale(lang);
-    return moment.unix(dte).format("dddd D, HH:mm");
+  if (dte && dayjs(dte).isValid()) {
+    dayjs.locale(lang);
+    return dayjs.unix(dte).format("dddd D, HH:mm");
   }
   return "";
 }

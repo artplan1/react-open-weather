@@ -1,4 +1,4 @@
-import moment from "moment";
+import dayjs from "dayjs";
 import icons from "./icons";
 import langText from "./lang";
 
@@ -29,9 +29,9 @@ export function getUnits(unit) {
 }
 
 export function formatDateTime(dte, lang) {
-  if (dte && moment(dte).isValid()) {
-    moment.locale(lang);
-    return moment.unix(dte).format("dddd D, HH:mm");
+  if (dte && dayjs(dte).isValid()) {
+    dayjs.locale(lang);
+    return dayjs.unix(dte).format("dddd D, HH:mm");
   }
   return "";
 }

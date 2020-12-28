@@ -22,7 +22,7 @@ The Component development is in progress and will contain more features in the f
 
 ### Dependencies
 
-- [Moment JS](https://momentjs.com/)
+- [DayJS](https://day.js.org/)
 - React
 
 ### Installation
@@ -53,17 +53,17 @@ Then in your code file you can import the component
 #### Using ES2015 import
 
 ```js
-import ReactWeather from 'react-open-weather';
+import ReactWeather from "react-open-weather";
 //Optional include of the default css styles
-import 'react-open-weather/lib/css/ReactWeather.css';
+import "react-open-weather/lib/css/ReactWeather.css";
 ```
 
 #### Using CommonJS
 
 ```js
-var ReactWeather = require('react-open-weather').default;
+var ReactWeather = require("react-open-weather").default;
 //Optional include of the default css styles
-require('react-open-weather/lib/css/ReactWeather.css');
+require("react-open-weather/lib/css/ReactWeather.css");
 ```
 
 #### UMD build is available with script tag

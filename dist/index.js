@@ -3,13 +3,13 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
-var moment = require('moment');
-var fetch = require('isomorphic-unfetch');
+var dayjs = require('dayjs');
+var fetch = require('isomorphic-fetch');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
-var moment__default = /*#__PURE__*/_interopDefaultLegacy(moment);
+var dayjs__default = /*#__PURE__*/_interopDefaultLegacy(dayjs);
 var fetch__default = /*#__PURE__*/_interopDefaultLegacy(fetch);
 
 var icons = {
@@ -91,9 +91,9 @@ function getUnits(unit) {
 }
 
 function formatDateTime(dte, lang) {
-  if (dte && moment__default['default'](dte).isValid()) {
-    moment__default['default'].locale(lang);
-    return moment__default['default'].unix(dte).format("dddd D, HH:mm");
+  if (dte && dayjs__default['default'](dte).isValid()) {
+    dayjs__default['default'].locale(lang);
+    return dayjs__default['default'].unix(dte).format("dddd D, HH:mm");
   }
   return "";
 }

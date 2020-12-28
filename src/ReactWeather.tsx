@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getIcon, getLangs, getUnits, formatDateTime } from "./utils";
 
-import fetch from "isomorphic-unfetch";
+import fetch from "isomorphic-fetch";
 
 import "./ReactWeather.sass";
 
